@@ -637,8 +637,7 @@ nav li .link {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	translate: (-50%, -50%);
-
+	transform: translate(-50%, -50%);
 	transition: fill 250s cubic-bezier(0.4, 0, 0.2, 1);
 	pointer-events: none;
 }
