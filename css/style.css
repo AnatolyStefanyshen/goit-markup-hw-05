@@ -54,6 +54,38 @@ h3 {
 	font-weight: 500;
 }
 
+input {
+	color: currentColor;
+	font-family: inherit;
+}
+
+button {
+	display: block;
+	margin: auto;
+	background-color: #4d5ae5;
+	color: #ffffff;
+	cursor: pointer;
+	font-weight: 500;
+	line-height: 1.5;
+	letter-spacing: 0.04em;
+	border-radius: 4px;
+	border: none;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover,
+button:focus,
+button:active {
+	background-color: #404bbf;
+}
+
+input,
+textarea,
+button {
+	font-family: inherit;
+	line-height: inherit;
+}
+
 .container {
 	max-width: 1158px;
 	padding-left: 15px;
@@ -178,31 +210,13 @@ nav li .link {
 .studio-title {
 	color: #ffffff;
 	max-width: 496px;
-	margin: auto;
+	margin: 0 auto 48px;
 }
 
 .order-button {
-	display: block;
-	margin: auto;
 	min-width: 169px;
-	background-color: #4d5ae5;
-	color: #ffffff;
-	cursor: pointer;
-	font-weight: 500;
-	line-height: 1.5;
-	letter-spacing: 0.04em;
-	margin-top: 48px;
-	border-radius: 4px;
 	padding: 16px 32px;
-	border: none;
 	height: 56px;
-	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.order-button:hover,
-.order-button:focus,
-.order-button:active {
-	background-color: #404bbf;
 }
 
 .section-title {
@@ -374,7 +388,7 @@ nav li .link {
 	padding: 100px 0;
 }
 
-.footer-part {
+.footer-description {
 	margin-right: 120px;
 }
 
@@ -427,4 +441,216 @@ nav li .link {
 .footer-container {
 	display: flex;
 	align-items: baseline;
+}
+
+.footer-social {
+	margin-right: 80px;
+}
+
+.subscribe-input-box {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.subscribe-input-email {
+	background-color: transparent;
+	border: 1px solid #ffffff;
+	border-radius: 4px;
+	padding: 8px 16px;
+	font-size: 12px;
+	line-height: 2;
+	width: 264px;
+	height: 40px;
+	outline: 0;
+}
+
+.subscribe-input-email::placeholder {
+	color: currentColor;
+}
+
+.subscribe-form-container {
+	display: flex;
+	gap: 24px;
+	justify-content: center;
+	align-items: flex-end;
+}
+
+.subscribe-submit-btn {
+	display: flex;
+	padding: 8px 24px;
+	gap: 16px;
+	justify-content: center;
+	align-items: center;
+	height: 40px;
+}
+
+.modal-window-overlay {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(46, 47, 66, 0.4);
+	opacity: 0;
+	pointer-events: none;
+	z-index: 999;
+}
+
+.modal-window-overlay.is-open {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.order-modal-window {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 408px;
+	height: 584px;
+	padding: 24px;
+	background-color: #fcfcfc;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+		0 2px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.order-close-btn {
+	display: flex;
+	height: 24px;
+	width: 24px;
+	background-color: #e7e9fc;
+	border-radius: 50%;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 24px;
+	align-self: flex-end;
+	transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order-close-btn:hover {
+	background-color: #404bbf;
+}
+
+.order-data-description {
+	align-self: center;
+	display: block;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: 0.02em;
+	color: #2e2f42;
+	text-align: center;
+	margin-bottom: 16px;
+}
+
+.order-inputs {
+	align-self: flex-start;
+	margin-bottom: 16px;
+}
+
+.order-input-container {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.order-input-container:not(:last-child) {
+	margin-bottom: 8px;
+}
+
+.order-input {
+	width: 360px;
+	height: 40px;
+	padding-left: 38px;
+	outline: 0;
+	border: 1px solid rgba(46, 47, 66, 0.6);
+	border-radius: 4px;
+	transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-icon-box {
+	position: relative;
+}
+
+.input-icon {
+	position: absolute;
+	top: 50%;
+	left: 16px;
+	transform: translate(0, -50%);
+	fill: #2e2f42;
+	transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order-input:focus-within {
+	border: 1px solid #404bbf;
+}
+
+.order-input:focus-within + .input-icon {
+	fill: #404bbf;
+}
+
+.order-input-label,
+.privacy-container,
+.order-comment::placeholder {
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.17;
+	letter-spacing: 0.04em;
+	color: #8e8f99;
+}
+
+.order-comment {
+	height: 120px;
+	padding-left: 16px;
+	padding-top: 8px;
+}
+
+.privacy-container {
+	line-height: 1.33;
+	margin-bottom: 24px;
+}
+
+.check-empty {
+	display: inline-block;
+	position: relative;
+	vertical-align: sub;
+	border: 1px solid rgba(46, 47, 66, 0.6);
+	width: 16px;
+	height: 16px;
+	border-radius: 2px;
+	cursor: pointer;
+	margin-right: 8px;
+	transition: background-color 250s cubic-bezier(0.4, 0, 0.2, 1);
+	fill: transparent;
+}
+
+.privacy-check:checked + .privacy-check-label > .check-empty {
+	border: none;
+	background-color: #404bbf;
+	fill: #ffffff;
+}
+
+.accept-icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: (-50%, -50%);
+
+	transition: fill 250s cubic-bezier(0.4, 0, 0.2, 1);
+	pointer-events: none;
+}
+
+.privacy-container .privacy-link {
+	display: inline-block;
+	color: #4d5ae5;
+	text-decoration: underline;
+	transition: color 250s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.order-submit-btn {
+	min-width: 169px;
+	padding: 16px 32px;
 }
